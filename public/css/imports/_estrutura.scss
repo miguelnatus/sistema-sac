@@ -1,0 +1,319 @@
+body {
+	background-color: map-get($cores, neutro);
+}
+//barra lateral
+header {
+	height: 100vh;
+	background-color: map-get($cores, menu_fundo);
+	.logo {
+		display: block;
+		height: 70px;
+		background-color: map-get($cores, logo_fundo);
+		img {
+			max-width: 156px;
+			@include fullCenter();
+		}
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+#menu-principal {
+	ul {
+		padding-top:30px;
+		&::before {
+			content: "NAVEGAÇÃO";
+			display: block;
+			margin:0 0 10px 20px;
+			font-size: 10px;
+			color: map-get($cores, menu_titulo_fonte);
+		}
+	}
+	li {
+		margin-bottom: 3px;
+	}
+	a {
+		display:block;
+		padding-left: 50px;
+		background: no-repeat 20px center;
+		background-size:20px auto; 
+		line-height:40px;
+		color: map-get($cores, menu_fonte);
+		font-size: 16px;
+		&:hover { background-color:map-get($cores, menu_btn_fundo_hover); text-decoration: none; }
+		&.dashboard { background-image: url(../imgs/estrutura/icones/ic_home.png); }
+		&.como-funciona { background-image: url(../imgs/estrutura/icones/ic_help.png); }
+		&.atendimento { background-image: url(../imgs/estrutura/icones/ic_mail.png); }
+		&.lojistas { background-image: url(../imgs/estrutura/icones/ic_lojistas.png); }
+		&.usuarios { background-image: url(../imgs/estrutura/icones/ic_user.png); }
+	}
+}
+#menu-secundario {
+	position: absolute; 
+	bottom: 20px;
+	left: 50%;
+	width: fit-content;
+	padding-top: 14px;
+	border-top: map-get($cores, menu_secundario_borda) 1px solid;
+	@include transform(translateX(-50%));
+	ul {
+		&::before {
+			content: "GIULIA DOMNA";
+			display: block;
+			text-align: center;
+			font-size: 10px;
+			font-weight: 700;
+			color: map-get($cores, menu_fonte);
+		}
+	}
+	li {
+		display: inline-block;
+		&:not(:last-child)::after {
+			content: "\00b7";
+			display: inline-block;
+			margin: 0 4px 0 7px;
+			color: map-get($cores, menu_fonte);
+		}
+	}
+	a {
+		color: map-get($cores, menu_fonte);
+		font-size: 10px;
+		text-transform: uppercase;
+	}
+}
+
+//barra superior
+#barra-superior { 
+	height: 70px;
+	background-color: map-get($cores, topo_fundo);
+	position:relative;
+	z-index: 100;
+}
+#barra-superior form input[type=search] {
+	width: 20vw;
+	margin-right: 5px;
+	font-size: 14px;
+}
+#menu-funcional {
+	margin:0;
+	.notificacoes {
+		position: relative;
+		.botao-notificacoes {
+			display: block;
+			width: 30px;
+			height: 30px;
+			background-color: map-get($cores, notificacoes_botao_fundo);
+			color: map-get($cores, notificacoes_botao_fonte);
+			text-align: center;
+			line-height: 30px;
+			font-size: 12px;
+			@include borderRadius(50%);
+		}
+		#lista-notificacoes {
+			position: absolute;
+			top:calc(100% + 5px);
+			left: 50%;
+			width: 280px;
+			min-height: 85px;
+			padding: 10px 7px 10px 10px;
+			background-color: map-get($cores, notificacoes_balao);
+			z-index: 101;
+			@include transform(translateX(-50%));
+			@include borderRadius(5px);
+			@include boxShadow(0 0 16px #999999);
+        	@include setaSuperior(map-get($cores, notificacoes_balao));
+			ul {
+				height: 100%;
+				padding-left: 0;
+				padding-right: 13px;
+				overflow: auto;
+				list-style: none;
+			}
+			li {
+				margin-bottom: 10px;
+				padding: 10px;
+				background-color: map-get($cores, notificacoes_balao_item);
+				@include borderRadius(5px);
+				&:last-child {
+					margin-bottom: 0;
+				}
+				&:hover {
+					background-color: darken(map-get($cores, notificacoes_balao_item), 10%);
+				}
+				a {
+					display: block;
+					color: map-get($cores, texto_padrao);
+					text-decoration:none;
+				}
+				span {
+					display: block;
+				}
+				.tipo {
+					float: left;
+					text-transform: uppercase;
+					font-size: .5rem;
+					font-weight: 700;
+				}
+				.data {
+					float: right;
+					font-size: .5rem;
+				}
+				.titulo {
+					clear:both;
+					margin-top: 8px;
+				}
+			}
+		}
+	}
+	.user {
+		.avatar {
+			width: 110px;
+			height: 50px;
+			border: map-get($cores, avatar_borda ) 2px solid;
+			background-color: map-get($cores, avatar_fundo);
+			overflow: hidden;
+			@include borderRadius(5px);
+			img {
+				max-height: 90%;
+				max-width: 100%;
+				@include fullCenter();
+			}
+		}
+		.menu-usuarios { 
+			position: relative;
+		}
+		.nome-usuario {
+			background: url("../imgs/estrutura/seta-submenu.png") no-repeat right center;
+			background-size: .5em;
+			padding-right: 15px;
+			font-size:16px;	
+			color: map-get($cores, nome_usuario_fonte);
+		}
+		#opcoes-menu-usuarios {
+			position: absolute;
+			left: 50%;
+			top: calc(100% + 5px);
+			padding: 10px;
+			background-color: map-get($cores, neutro);
+			list-style: none;
+			@include transform(translateX(-50%));
+			@include borderRadius(5px);
+			@include boxShadow(0 0 16px #999999);
+			@include setaSuperior(map-get($cores, neutro));
+			li:not(:last-child) {
+				margin-bottom: 5px;
+				padding-bottom: 5px;
+				border-bottom: 1px #eeeeee solid;
+			}
+			a {
+				display: block;
+				padding: 4px 8px;
+				color: map-get($cores, texto_padrao);
+				font-size: .9rem;
+				white-space: nowrap;
+				&:hover {
+					opacity: 0.6;
+				}
+			}
+		}
+	}
+}
+
+//main
+main > .col { 
+	padding: 0;
+}
+main > .col > section { 
+	padding: 20px 20px 20px 20px;
+	border-top:20px #f2f2f2 solid;
+	background-color: map-get($cores, neutro);
+	h2 {
+		font-size: 1.5rem;
+		margin-bottom: .7rem;
+		color: map-get($cores, subtitulo);
+	}
+	h3 {
+		font-size: 1.2rem;
+		margin-bottom: .7rem;
+		color: map-get($cores, subtitulo);
+	}
+}
+.titulo-internas {
+	height: 120px;
+	padding-left: 20px;
+	padding-top: 32px;
+	position: relative;
+	background-color: map-get($cores, neutro);
+	@include boxShadow(0 0 4px 0 rgba(0, 0, 0, 0.3));
+	h1{
+		font-size: 24px;
+		color: map-get($cores, titulo);
+	}
+	p {
+		font-size: 13px;
+		color: map-get($cores, subtitulo);
+	}
+}
+
+//Callouts
+.callout {
+	padding: 1.25rem;
+	margin-top: 1.25rem;
+	margin-bottom: 1.25rem;
+	border: 1px solid #eee;
+	border-left-width: .25rem;
+	border-radius: .25rem;
+	border-left-color: map-get($cores, institucional);
+} 
+.callout h1 {
+	color: map-get($cores, institucional);
+	margin-top: 0;
+	margin-bottom: .25rem;
+	font-size: 1.8rem;
+}
+.callout p:last-child {
+	margin-bottom: 0;
+} 
+.callout + .callout {
+	margin-top: -.25rem;
+}
+
+.botao_excluir{
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	width: 70px;
+  	border-radius: 5px;
+  	background:#212529;
+  	position:relative;
+  	margin-left: 10px;
+  	float:left;
+  	cursor: pointer;
+}
+
+.botao_excluir img{
+	width: 25px;
+  }
+
+.table tbody tr :first-child img{
+	width: 17px;
+	margin-left: 25px;
+  }
+  .table thead th:nth-child(2){
+	width: 210px!important;
+  }
+
+  .table thead form{
+	float: right;
+	margin: 1px;
+  }
+  .table thead form button{
+	background-color: inherit;
+	border: 0;
+	cursor: pointer;
+  }
+  .login-box.termos{
+	font-family: Arial;
+  }

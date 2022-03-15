@@ -1,0 +1,167 @@
+/* login.scss */
+.hide {
+  display: none;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+h1, h2, h3 {
+  font-family: "Oswald", sans-serif;
+}
+
+.status-flag {
+  display: inline-block;
+  padding: 3px 5px;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  -webkit-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.status-flag.aberto {
+  background-color: #999999;
+}
+
+.status-flag.em_analise {
+  background-color: #F0AD4E;
+}
+
+.status-flag.parcial {
+  background-color: #428BCA;
+}
+
+.status-flag.finalizado {
+  background-color: #5CB85C;
+}
+
+.status-flag.concerto {
+  background-color: #5CB85C;
+}
+
+.status-flag.devolucao {
+  background-color: #FF99FF;
+}
+
+.status-flag.nao_procedente {
+  background-color: #D9534F;
+}
+
+.meta-dados-table {
+  font-size: 12px;
+  margin: 0;
+  height: 0;
+  overflow: visible;
+}
+
+body {
+  background-color: #333333;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.login-box {
+  padding: 30px;
+  background-color: #ffffff;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+header::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.logo {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.logo:not(:only-child) {
+  float: left;
+}
+
+h1 {
+  float: right;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #585858;
+  float: right;
+}
+
+.form-check {
+  float: left;
+  margin-bottom: 15px;
+}
+
+.esqueceu-senha-link {
+  float: right;
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+.statement {
+  clear: both;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #f2f2f2;
+  font-size: 0.8rem;
+  color: #585858;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+.statement p {
+  margin-bottom: 5px;
+}
+.statement p:last-child {
+  margin-bottom: 0;
+}
+
+.aviso-formulario {
+  margin-top: 15px;
+  color: #ffffff;
+  text-align: center;
+}
+.aviso-formulario a {
+  color: inherit;
+  font-weight: 700;
+}
+
+.alert {
+  width: 85%;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=login.css.map */
+
+.login-box.termos .container{
+  font-family: Arial!important;
+}

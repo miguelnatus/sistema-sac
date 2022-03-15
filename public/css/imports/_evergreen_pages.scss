@@ -1,0 +1,204 @@
+//_evergreen_pages.scss
+
+.termos-de-uso > div {
+	column-count: 2;
+	column-gap: 40px;
+	margin-bottom: 20px;
+	color: map-get($cores, texto_padrao)
+}
+#como-funciona {
+	padding-bottom: 60px;
+	.topo {
+		height: 300px;
+		margin: -20px -20px 40px -20px;
+		background-color: map-get($cores, institucional);
+		position: relative;
+		z-index: 10;
+		&::after {
+			content: "";
+			display: block;
+			border-top: 15px map-get($cores, institucional) solid;
+			border-left: 25px transparent solid;
+			border-right: 25px transparent solid;
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			@include transform(translateX(-50%));
+		}
+		& > div {
+			@include fullCenter();
+		}
+		h2 {
+			color: map-get($cores, neutro);
+			font-size: 2.5rem;
+			font-weight: 100;
+			text-align: center;
+			letter-spacing: .15rem;
+			line-height: 130%;
+			span {
+				display: block;
+				font-size: 1.5rem;
+			}
+		}
+		.btn {
+			display: table;
+			margin: 0 auto;
+		}
+	}
+	.passo {
+		position: relative;
+		padding: 45px 0;
+		@include clearfix;
+		.passo-label {
+			width: 70px;
+			height: 70px;
+			position: absolute;
+			top: 30px;
+			text-align: center;
+			color: map-get($cores, neutro);
+			font-family: $fonteTitulos;
+			font-size: 1.2rem;
+			line-height: 130%;
+			z-index: 10;
+			div {
+				@include fullCenter();
+			}
+			span {
+				display: block;
+			}
+			&::before, &::after {
+				content: "";
+				display: block;
+				width: 70px;
+				height: 70px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color:map-get($cores, institucional);
+				@include transform(perspective(7em) rotateX(20deg) rotate(5deg));
+			}
+			&::after {
+				background-color: darken(map-get($cores, institucional), 10%);
+				z-index: -1;
+				@include transform(perspective(7em) rotateX(20deg) rotate(12deg));
+			}
+		}
+		h3 {
+			font-weight: 300;
+			font-size: 1.7rem;
+			color: map-get($cores, institucional);
+		}
+		.passo-conteudo {
+			width: 50%;
+		}
+		.passo-imagem {
+			width: 50%;
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+		.passo-imagem .icon{
+			width: 50%;
+			img {
+				display: block;
+				width: 50%;
+			}
+		}
+		&:nth-child(odd){
+			padding-left: 110px;
+			.passo-label {
+				left: 20px;
+			}
+			.passo-conteudo {
+				float: left;
+				padding-right: 20px;
+			}
+			.passo-imagem {
+				float: right;
+				padding-left: 20px;
+			}
+		}
+		&:nth-child(even) {
+			padding-right: 110px;
+			//background-color: map-get($cores, fundo);
+			.passo-label {
+				right: 20px;
+			}
+			.passo-conteudo {
+				float: right;
+				padding-left: 20px;
+			}
+			.passo-imagem {
+				float: left;
+				padding-right: 20px;
+			}
+		}
+	}
+
+}
+.linha {
+	position: absolute;
+	&.linha-topo {
+		// ---╯
+		top: -28px;
+		left: 86px;
+		width: calc(50% - 86px);
+		height: 30px;
+		//border-bottom:map-get($cores, linha) 2px dotted;
+		@include comoFuncionaEstiloLinha(bottom);
+		@include comoFuncionaEstiloLinha(right);
+		border-bottom-right-radius: 30px;
+	}
+	&.linha-base {
+		// ---╮
+		bottom: -30px;
+		left:86px;
+		width: calc(50% - 86px);
+		height: 30px;
+		@include comoFuncionaEstiloLinha(top);
+		@include comoFuncionaEstiloLinha(right);
+		border-top-right-radius: 30px;
+	}
+	&.linha-esquerda {
+		// ╭
+		// |
+		// ╰
+		top: 0;
+		left: 55px;
+		width: 30px;
+		height: calc(100% + 2px);
+		margin-bottom: -2px;
+		@include comoFuncionaEstiloLinha(top);
+		@include comoFuncionaEstiloLinha(bottom);
+		@include comoFuncionaEstiloLinha(left);
+		border-top-left-radius: 30px;
+		border-bottom-left-radius: 30px;
+	}
+	&.linha-direita {
+		// ╮
+		// |
+		// ╯
+		top: 0;
+		right: 55px;
+		width: 30px;
+		height: calc(100% + 2px);
+		border-top: map-get($cores, linha) 2px dotted;
+		border-bottom: map-get($cores, linha) 2px dotted;
+		border-right: map-get($cores, linha) 2px dotted;
+		@include comoFuncionaEstiloLinha(top);
+		@include comoFuncionaEstiloLinha(bottom);
+		@include comoFuncionaEstiloLinha(right);
+		border-top-right-radius: 30px;
+		border-bottom-right-radius: 30px;
+	}
+	&.linha-horizontal {
+		// ------
+		height: 0;
+		top: 0;
+		left: 86px;
+		right: 86px;
+		@include comoFuncionaEstiloLinha(top);
+		clear: both;
+	}
+}

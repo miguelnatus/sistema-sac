@@ -1,0 +1,38 @@
+//_perfil.scss
+
+.dados-responsavel, .dados-empresa {
+	width: 50%;
+}
+.dados-responsavel {
+	padding-right: 35px;
+	border-right: #cccccc 1px dotted;
+	@include clearfix;
+
+	.upload-logo p {
+		margin-bottom: .5rem;
+	}
+	.logo-empresa {
+		width: 90px;
+		height: 90px;
+		position: relative;
+		margin-top: -1.2rem;
+		border: 5px map-get($cores, fundo) solid;
+		@include borderRadius(5px);
+		img {
+			max-width: 90%;
+			max-height: 90%;
+			@include fullCenter;
+		}
+	}
+	.atualizar-perfil {
+		display:block;
+		margin-left: auto;
+	}
+}
+.dados-empresa {
+	padding-left: 35px;
+	.statement {
+		color: map-get($cores, notas_texto);
+		font-size: .8rem;
+	}
+}

@@ -1,0 +1,49 @@
+fieldset{
+    width: 950px;
+    margin: 5px auto;
+    color: #444;
+    border: 1px solid rgb(0, 0, 0);
+    font-family: Helvetica;
+    padding: 10px;
+   }
+   
+   h1{
+    text-align: center;
+   }
+   p{
+       font-weight: 600;
+       color: #000;
+       margin-bottom: 2px;
+   }
+   li{
+    color: #000000;
+   }
+   ul{
+       list-style: none;
+       margin-bottom: 0px;
+   }
+   p.sub-titulo{
+    font-size: 20px;
+   }
+   
+   .direita{
+    text-align: right;
+   }
+   
+   .center{
+    text-align: center;
+   }
+
+   tr th{
+       font-weight: normal;
+   }
+  
+   p.ref{
+       margin-left: 20px;
+       line-height: 2px;
+   }
+   table .table-ref{
+       width: 105px;
+   }
+
+   

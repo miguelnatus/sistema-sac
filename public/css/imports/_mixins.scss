@@ -1,0 +1,58 @@
+// _mixins.scss
+//Menus escondidos
+@mixin menusEscondidos() {
+	display: none;
+}
+//propriedades com dependencia de browser
+@mixin transform($property) {
+	-webkit-transform: $property;
+	-ms-transform: $property;
+	transform: $property;
+}
+@mixin borderRadius($value) {
+	-webkit-border-radius: $value;
+	-ms-border-radius: $value;
+	border-radius: $value; 
+}
+@mixin boxShadow($value) {
+	-webkit-box-shadow: $value;
+	-ms-box-shadow: $value;
+	box-shadow: $value;
+}
+
+@mixin transition($time,$scope) {
+	-webkit-transition: $time $scope;
+	-moz-transition: $time $scope;
+	transition: $time $scope;
+}
+
+@mixin fullCenter($positioning: relative){
+	display: block;
+	position: $positioning;
+	left: 50%;
+	top: 50%;
+	@include transform(translate(-50%,-50%));
+}
+@mixin clearfix() {
+	&::after {
+	  display: block;
+	  content: "";
+	  clear: both;
+	}
+}
+@mixin setaSuperior($cor) {
+	&::after {
+		content: "";
+		display: block;
+		border-bottom: 5px $cor solid;
+		border-left: 5px transparent solid;
+		border-right: 5px transparent solid;
+		position: absolute;
+		top: -5px;
+		left: 50%;
+		@include transform(translateX(-50%));
+	}	
+}
+@mixin comoFuncionaEstiloLinha($borderposition){
+	border-#{$borderposition}:map-get($cores, linha) 2px dotted;
+}

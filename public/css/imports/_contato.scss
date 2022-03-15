@@ -1,0 +1,29 @@
+//_contato.scss
+
+.formulario-contato {
+	width: 60%;
+	textarea {
+		height: 200px;
+	}
+	.btn {
+		display: block;
+		margin-left: auto;
+	}
+	.alert.alert-danger{
+		margin-top: 15px;
+	}
+}
+.outros-contatos {
+	width: 100%;
+	& > div {
+		padding: 20px;
+		border-top: #cccccc 4px solid; 
+		background: map-get($cores, fundo);
+
+
+		div{
+			width: 33.3333333333%;
+			float: left;
+		}
+	}
+}

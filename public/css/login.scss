@@ -1,0 +1,73 @@
+/* login.scss */
+@import 'imports/variables_maps';
+@import 'imports/mixins';
+@import 'imports/padroes';
+
+body {
+    background-color: map-get($cores, login_fundo);
+}
+.full-height {
+    height:100vh;
+}
+.login-box {
+    padding: 30px;
+    background-color: map-get($cores, neutro);
+    @include borderRadius(10px);
+}
+header { 
+    @include clearfix;
+    margin-bottom: 20px;
+}
+.logo {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+}
+.logo:not(:only-child) {
+    float: left;
+}
+h1 {
+    float: right;
+}
+h1 {
+    font-size: 1.5rem;
+    color: map-get($cores, chamada);
+    float:right;
+}
+.form-check {
+    float: left;
+    margin-bottom: 15px;
+}
+.esqueceu-senha-link {
+    float: right;
+    color: map-get($cores, texto_padrao);
+    margin-bottom: 10px;
+}
+.statement {
+    clear: both;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: map-get($cores, fundo);
+    font-size: 0.8rem;
+    color: map-get($cores, chamada);
+    @include borderRadius(10px);
+    p {
+        margin-bottom: 5px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.aviso-formulario {
+    margin-top: 15px;
+    color: map-get($cores, neutro);
+    text-align: center;
+    a {
+        color: inherit;
+        font-weight: 700;
+    }
+}
+.alert {
+    width: 85%;
+    @include fullCenter(absolute);
+}

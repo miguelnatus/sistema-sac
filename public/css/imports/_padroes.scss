@@ -1,0 +1,32 @@
+//_padroes.scss
+
+.hide { display: none; }
+.left { float: left; }
+.right { float:right; }
+.clear { clear:both; }
+
+//textos
+h1, h2, h3 { font-family: $fonteTitulos; }
+
+//status
+.status-flag {
+	display: inline-block;
+	padding: 3px 5px;
+	color: map-get($cores, status_texto);
+	font-size: .7rem;
+	font-weight: 700;
+	@include borderRadius(2px);
+}
+@each $status_class, $cor in $coresStatus {
+	.status-flag.#{$status_class} {
+		background-color: $cor;
+	}
+}
+
+//tables
+.meta-dados-table {
+	font-size: 12px;
+	margin: 0;
+	height: 0;
+	overflow: visible;
+}

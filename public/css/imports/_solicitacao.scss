@@ -1,0 +1,272 @@
+//_solicitacao.scss
+
+.solicitacao-infos {
+	margin-bottom: 10px;
+	@include clearfix();
+	h2 {
+		float: left;
+		margin-top: 5px;
+		margin-right: 30px;
+	}
+	.datas {
+		float: right;
+		span {
+			display: inline-block;
+			font-size: 12px; 
+			color: map-get($cores, chamada);
+			&:not(:last-child)::after {
+				content: "\00b7";
+				display: inline-block;
+				margin: 0 4px 0 7px;
+				color: map-get($cores, menu_fonte);
+			}
+		}
+	}
+	.status-solicitacao{
+		h4{
+			margin: 6px 0 0;
+			padding: 8px;
+		}
+	}
+}
+
+.listagem-itens ul {
+	list-style: none;
+	padding-left: 0;
+	li {
+		padding:25px 10px 25px 25px;
+		background-color: map-get($cores, fundo);
+		margin-bottom: 15px;
+		position: relative;
+		@include borderRadius(5px);
+		@include clearfix();
+		.item-numero {
+			display: block;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			opacity: 0.7;
+			font-weight: bold;
+			font-size: 17px;
+		}
+		.input-texto {
+			float: left;
+			width: 50%;
+			label {
+				display: block;
+				input, textarea {
+					display: block;
+				}
+			}
+			.left {
+				width: 32%;
+				margin-right: 2%;
+			}
+			.form-group:nth-last-child(2) {
+				margin-right: 0;
+			}
+			textarea {
+				height: 56px;
+			}
+		}
+		.files {
+			float: right;
+		}
+		.input-files {
+			display: none;
+		}
+		.input-files-mascara > label {
+			display: inline-block;
+			width:142px;
+			height: 142px;
+			border: #ffffff 8px solid;
+			overflow: hidden;
+			margin-right: 6px;
+			background-size: 100% 100%;
+			cursor: pointer;
+			@include borderRadius(5px);
+			img {
+				max-width: 100%;
+				max-height: 100%;
+				display: none;
+			}
+			&:last-child { margin-right: 0; }
+			&.foto1 { background:url("../imgs/solicitacoes/exemplo-lado.png") no-repeat center center; }
+			&.foto2 { background:url("../imgs/solicitacoes/exemplo-frente.png") no-repeat center center; }
+			&.foto3 { background:url("../imgs/solicitacoes/exemplo-defeito.png") no-repeat center center; }
+		}
+		.input-files-mascara > label.foto {
+			img{
+				display: block;
+			}
+		}
+		.remove-item{
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			font-size: 18px;
+			text-align: center;
+			background-color: #999;
+			color: #fff;
+			font-weight: bold;
+			width: 25px;
+			height: 25px;
+			line-height: 24px;
+			@include borderRadius(50%);
+			@include transition(0.4s,all);
+		}
+		.remove-item:hover{
+			text-decoration: none;
+			background-color: transparent;
+			color: #000;
+		}
+		p.alert.alert-danger.alert-dismissible{
+			padding: .75rem .3rem;
+			margin-top: 10px;
+		}
+	}
+}
+.status {
+	@include clearfix;
+	.form-group { margin-bottom: 0; }
+	label, select { display: inline-block; width: auto; }
+}
+.notas-fiscais {
+	padding-top:30px;
+	border-top: #ccc 1px dotted;
+	ul {
+		padding-left: 0;
+		list-style: none;
+	}
+	li {
+		margin-bottom:20px;
+		padding:10px 20px;
+		background-color: map-get($cores, fundo);
+		@include borderRadius(5px);	
+		@include clearfix;
+		& > div {
+			width: 49%;
+			margin-right: 2%;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		p {
+			margin-bottom: .5rem;
+		}
+		&.nota-cadastrada *:not(:last-child)::after {
+			content:"-";
+			display: inline-block;
+			margin:0 10px 0 14px;
+			color: map-get($cores, texto_padrao);
+		}
+	}
+}
+
+.adicionar-wrapper {
+	border: #CADAE2 2px dashed;
+	margin-bottom: 30px;
+	padding: 15px;
+	position: relative;
+	@include borderRadius(5px);
+	button {
+		display: block;
+		margin:auto;
+	}
+}
+
+.botao-salvar button {
+	display: block;
+	margin: auto;
+}
+
+#mensagens {
+	margin-top: 70px;
+	.mensagens-wrapper {
+		padding: 20px;
+		background-color: map-get($cores, fundo);
+		@include borderRadius(5px);
+	}
+	.escrever-mensagem {
+		margin-bottom: 25px;
+		padding-bottom: 25px;
+		border-bottom: #ccc 1px dotted;
+		@include clearfix;		
+		form {
+			width:calc(100% - 130px);
+			textarea {
+				height: 150px;
+			}
+			button {
+				display: block;
+				float: right;
+			}
+		}
+	}
+	.msg {
+		margin-bottom: 25px;
+		@include clearfix;
+		&.lojista {
+			.autor { float:left; }	
+			.texto-mensagem { float:left; margin-left: 10px; }
+		}
+		&.giulia-domna {
+			.autor { float:right; }	
+			.texto-mensagem { float:right; margin-right: 10px; }
+		}
+		.texto-mensagem img {
+			display: block; 
+			margin:20px auto 0;
+			max-width: 90%;
+			border: map-get($cores, borda_img) 5px solid;
+		}
+	}
+	.autor {
+		width: 120px;
+		.avatar {
+			position: relative;
+			height: 60px;
+			border: 1px#ccc solid;
+			background-color: #ffffff;
+			@include borderRadius(5px);
+			img {
+				max-width: 90%;
+				max-height: 95%;
+				@include fullCenter;
+			}
+		}
+		small {
+			display: block;
+			margin-top: 5px;
+			text-align: center;
+			font-size: .6rem;
+			color: map-get($cores, notas_texto);
+		}
+	}
+	.texto-mensagem {
+		max-width:calc(100% - 130px);
+		padding: 10px;
+		background-color: darken(map-get($cores, neutro), 10%);
+		@include borderRadius(5px);
+	}
+}
+.btn-file {
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+.btn-file input[type=file] {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	display: block;
+}

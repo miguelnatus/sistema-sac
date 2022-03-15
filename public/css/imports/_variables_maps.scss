@@ -1,0 +1,54 @@
+// _variables_maps.scss
+
+$cores: (
+	//cores da marca
+	institucional: #DDA562,
+	neutro: #ffffff,
+	fundo: #f2f2f2,
+	//cores do corpo do texto
+	titulo: #333333,
+	subtitulo: #999999,
+	chamada: #585858,
+	texto_padrao: #666666,
+	notas_texto: #585858,
+	//cores do topo
+	topo_fundo: #F2F2F2,
+	notificacoes_botao_fonte: #ffffff,
+	notificacoes_botao_fundo: #C2C2FF,
+	notificacoes_balao: #E4E4E4,
+	notificacoes_balao_item: #F0D7BA,
+	avatar_borda: #cccccc,
+	avatar_fundo: #ffffff,
+	nome_usuario_fonte: #333333,
+	resumo_fonte: #666666,
+	resumo_resultado_fonte: #999999,
+	//cores da barra lateral
+	logo_fundo: #E4E4E4,
+	menu_fundo: #585858,
+	menu_titulo_fonte: #999999,
+	menu_fonte: #BCBCBC,
+	menu_btn_fundo_hover: #515151,
+	menu_secundario_borda: #999999,
+	//tabelas
+	link_edit: #d8a200,
+	link_delete: #bd0f0fa4,
+	// status
+	status_texto: #ffffff,
+	//login
+	login_fundo: #333333,
+	//como funciona
+	linha: #cccccc,
+	//solicitacao
+	borda_img: #cccccc
+);
+$coresStatus: (
+	aberto: #999999,
+	em_analise: #F0AD4E,
+	parcial: #428BCA,
+	finalizado: #5CB85C,
+	concerto: #5CB85C,
+	devolucao: #FF99FF,
+	nao_procedente: #D9534F
+);
+//fontes
+$fonteTitulos: 'Oswald', sans-serif;

@@ -1,0 +1,15 @@
+/* main.scss */
+@import 'imports/variables_maps';
+@import 'imports/mixins';
+@import 'imports/padroes';
+@import 'imports/estrutura';
+@import 'imports/home';
+@import 'imports/solicitacao';
+@import 'imports/perfil';
+@import 'imports/contato';
+@import 'imports/lista_lojistas';
+@import 'imports/form_pagina';
+@import 'imports/list';
+@import 'imports/evergreen_pages';
+
+// Inconsistência no scss, não gerar novo arquivo css com sass, ocorrerá perdas de estilos.

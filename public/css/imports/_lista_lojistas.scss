@@ -1,0 +1,48 @@
+//_lista_lojistas.scss
+
+table.administrativa {
+	font-size: .8rem;
+	a {
+		text-decoration: underline;	
+	}
+	a.edit {
+		color: map-get($cores, link_edit);
+	}
+	a.delete {
+		color: map-get($cores, link_delete);
+	}
+	div.loader{
+		position: absolute;
+		top: 1px;
+		left: -35px;
+
+		img{
+			width: 20px;
+		}
+
+	}
+	
+}
+.section-controles {
+	margin: 10px 0 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	p { 
+		margin-bottom: 0;
+		color: map-get($cores, subtitulo);
+		font-size: 1.1rem;
+	}
+	form {
+		.form-group {
+			float: left;
+			margin-right: 5px;
+			.form-control {
+				width: 250px;
+			}
+		}	
+		button {
+			float: left;
+		}
+	}
+}
