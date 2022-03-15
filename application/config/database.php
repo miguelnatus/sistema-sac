@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'sac_giu_teste.mysql.dbaas.com.br',
+	'hostname' => '',
 	'username' => 'sac_giu_teste',
-	'password' => 'Sqlg4i4u818',
+	'password' => '',
 	'database' => 'sac_giu_teste',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
